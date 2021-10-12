@@ -61,8 +61,6 @@ class AddressBook{
                 case 4:
                     System.out.println("Exportar CSV.");
 
-                    load(String archivoIn, String archivoOut);
-                    break;
 
                 case 5:
                     System.out.println("Recuperar agenda de un CSV.");
@@ -95,40 +93,6 @@ class AddressBook{
         nombre = ingresar.nextLine();
         agenda.remove(nombre);
         System.out.println();
-    }
-
-    static void load(String archivoIn, String archivoOut) {
-        archivoIn = "C:/Users/vickf/Desktop/Tecmilenio/24 Optativa disciplinar II_Computación en Java(CU)/agenda.csv";
-        archivoOut = "C:/Users/vickf/Desktop/Tecmilenio/24 Optativa disciplinar II_Computación en Java(CU)/agenda1.csv";
-
-        BufferedReader lectura = null;
-        BufferedWriter escritura = null;
-
-        try {
-            lectura = new BufferedReader(new FileReader(archivoIn));
-            escritura = new BufferedWriter(new FileWriter(archivoOut));
-
-            String line;
-            while ((line = lectura.readLine()) != null) {
-                System.out.println(line);
-                escritura.write(line + "\n");
-            }
-        } catch (IOException e){
-            System.out.println("Excepcion IO: " + e.getMessage());
-        } finally {
-            try{
-                if(lectura != null){
-                    lectura.close();
-                }
-
-                if (escritura != null){
-                    escritura.close();
-                }
-
-            } catch(IOException e) {
-                System.out.println("Excepcion IO: " + e.getMessage());
-            }
-        }
     }
 
 

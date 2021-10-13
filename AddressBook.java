@@ -64,6 +64,8 @@ class AddressBook {
 
                 case 5:
                     System.out.println("Recuperar agenda de un CSV.");
+
+                    reader();
                     break;
 
                 case 6:
@@ -132,10 +134,11 @@ class AddressBook {
 
     static void reader() {
         try
-                (FileReader fr = new FileReader("C:/Users/vickf/Desktop/Tecmilenio/24 Optativa disciplinar II_Computación en Java(CU)/input.csv")) {
+                (FileReader fr = new FileReader("C:/Users/vickf/IdeaProjects/AddressBook/src/output.csv")) {
             int c;
 
             while ((c = fr.read()) != -1) System.out.print((char) c);
+            System.out.println((char)c);
 
         } catch (IOException e) {
             System.out.println("Error de entrada/salida: " + e);
